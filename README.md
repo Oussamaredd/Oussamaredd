@@ -6,38 +6,21 @@
       <stop offset="100%" stop-color="#7ad28d"/>
     </linearGradient>
   </defs>
-
-  <!-- GitHub dark background -->
   <rect width="1200" height="220" fill="#0d1117"/>
-
-  <!-- Waves -->
   <path d="M0,70 C220,140 420,20 620,80 C820,140 980,120 1200,60 L1200,0 L0,0 Z" fill="url(#g)" opacity="0.9"/>
   <path d="M0,115 C240,165 430,55 650,110 C860,160 1000,165 1200,90 L1200,0 L0,0 Z" fill="url(#g)" opacity="0.55"/>
 </svg>
-
-<p align="center">
-  <img src="assets/banner.svg" alt="banner" width="100%" />
-</p>
 
 <h2 align="center">
   Oussama Radouane | Développeur Passionné 🚀
 </h2>
 
 <p align="center">
-  <a href="https://github.com/Oussamaredd">
-    <img src="https://img.shields.io/badge/AMASSI06-111111?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
-  <a href="https://your-portfolio.com">
-    <img src="https://img.shields.io/badge/VOIR%20MON%20PORTFOLIO-0A66C2?style=for-the-badge&logo=vercel&logoColor=white" />
-  </a>
   <a href="mailto:radouaneoussama998@gmail.com">
     <img src="https://img.shields.io/badge/EMAIL-444444?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
   <a href="https://linkedin.com/in/Oussama-radouane">
     <img src="https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  <a href="https://github.com/login">
-    <img src="https://img.shields.io/badge/CONNEXION-1F6FEB?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 </p>
 
