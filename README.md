@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://oussamaredd.vercel.app/api/banner?style=matrix&v=1" width="100%" />
+  <img src="https://oussamaredd.vercel.app/api/banner?style=matrix&h=75&cols=55&speed=5&seed=42&v=1" width="100%" />
 </p>
 
 <h2 align="center">
