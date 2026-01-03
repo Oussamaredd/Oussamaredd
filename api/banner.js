@@ -6,6 +6,17 @@ function clamp(n, min, max) {
   return Math.max(min, Math.min(max, n));
 }
 
+// Escape text so SVG/XML never breaks (fixes StartTag invalid element name)
+function escapeXml(s = "") {
+  return String(s).replace(/[&<>"']/g, (c) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&apos;",
+  }[c]));
+}
+
 // Deterministic RNG (so same seed = same banner)
 function makeRng(seed) {
   let x = (seed >>> 0) || 1;
@@ -21,7 +32,9 @@ function makeRng(seed) {
 function matrixBanner({ W, H, cols, speed, seed }) {
   const rand = makeRng(seed);
 
-  const charset = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&*+-<>/";
+  // Safer charset (no < > &). Escaping still protects you anyway.
+  const charset = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%*+-/=";
+
   const colWidth = W / cols;
 
   // Build rain columns
@@ -38,7 +51,7 @@ function matrixBanner({ W, H, cols, speed, seed }) {
     const dur = (speed * (0.7 + rand() * 0.9)).toFixed(2); // vary per column
     const opacity = (0.25 + rand() * 0.35).toFixed(2);
 
-    // build text string with line breaks (SVG respects newlines with xml:space + <tspan>)
+    // build text string with line breaks (we'll split into <tspan>s)
     let s = "";
     for (let k = 0; k < streamChars; k++) {
       s += charset[Math.floor(rand() * charset.length)];
@@ -47,6 +60,11 @@ function matrixBanner({ W, H, cols, speed, seed }) {
 
     // bright "head" glow (small circle) + stream text
     const headY = yStart + Math.round(rand() * H * 0.6);
+
+    const tspans = s.split("\n").map((ch, idx) => {
+      const safe = escapeXml(ch);
+      return `<tspan x="${x}" dy="${idx === 0 ? 0 : fontSize + 1}">${safe}</tspan>`;
+    }).join("");
 
     columnsSvg += `
       <g opacity="${opacity}">
@@ -60,7 +78,7 @@ function matrixBanner({ W, H, cols, speed, seed }) {
               font-size="${fontSize}"
               fill="rgba(80, 255, 140, 0.85)"
               xml:space="preserve">
-          ${s.split("\n").map((ch, idx) => `<tspan x="${x}" dy="${idx === 0 ? 0 : fontSize + 1}">${ch}</tspan>`).join("")}
+          ${tspans}
           <animate attributeName="y" dur="${dur}s" repeatCount="indefinite" from="${yStart}" to="${H + 60}" />
         </text>
       </g>
