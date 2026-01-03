@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/banner.js": {
+      "includeFiles": "assets/*.svg"
+    }
+  }
+}
