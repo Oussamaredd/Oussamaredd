@@ -1,12 +1,12 @@
-// api/banner.js  (CommonJS)
-module.exports = (req, res) => {
-  const which = (req.query?.which || "1").toString();
-  const animate = (req.query?.animate || "0").toString() === "1";
+// api/banner.js  (ESM default export)
 
-  // Palette close to your screenshot
+export default function handler(req, res) {
+  const which = String(req.query?.which ?? "1");
+  const animate = String(req.query?.animate ?? "0") === "1";
+
   const palettes = {
     "1": { a: "#5b2a86", b: "#a33a6f", c: "#b11b2a" }, // purple -> pink -> red
-    "2": { a: "#1f3a8a", b: "#0ea5e9", c: "#22c55e" }, // blue -> cyan -> green
+    "2": { a: "#3b82f6", b: "#06b6d4", c: "#22c55e" }, // blue -> cyan -> green
   };
   const p = palettes[which] || palettes["1"];
 
@@ -60,4 +60,4 @@ module.exports = (req, res) => {
   res.setHeader("Content-Type", "image/svg+xml; charset=utf-8");
   res.setHeader("Cache-Control", "no-store");
   res.status(200).send(svg);
-};
+}
