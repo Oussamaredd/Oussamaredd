@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="120" viewBox="0 0 1400 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gradient banner">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1400" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5b2a86"/>
+      <stop offset="55%" stop-color="#a33a6f"/>
+      <stop offset="100%" stop-color="#b11b2a"/>
+    </linearGradient>
+
+    <clipPath id="clip">
+      <rect x="0" y="0" width="1400" height="120" rx="12"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="120" rx="12" fill="url(#grad)"/>
+
+  <g clip-path="url(#clip)">
+    <!-- subtle dark overlay -->
+    <rect width="1400" height="120" fill="rgba(0,0,0,0.14)"/>
+
+    <!-- bottom dark wave -->
+    <path fill="rgba(0,0,0,0.35)"
+      d="M0,82
+         C180,70 360,96 540,86
+         C720,76 900,98 1080,88
+         C1220,82 1310,84 1400,86
+         L1400,120 L0,120 Z"/>
+
+    <!-- mid highlight wave -->
+    <path fill="rgba(255,255,255,0.10)"
+      d="M0,58
+         C220,46 420,66 620,60
+         C820,54 1010,70 1200,64
+         C1300,62 1360,61 1400,62
+         L1400,0 L0,0 Z"/>
+  </g>
+</svg>
