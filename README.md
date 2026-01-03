@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="banner" width="100%" />
+  <img src="https://oussamaredd.vercel.app/api/banner?which=1" alt="banner" width="100%" />
 </p>
 
 <h2 align="center">
@@ -24,5 +24,5 @@ je suis étudiant Mastère 2 Expert en Architecture et Développement Logiciel e
 ---
 
 <p align="center">
-  <img src="assets/banner2.svg" alt="banner" width="100%" />
+  <img src="https://oussamaredd.vercel.app/api/banner?which=2" alt="banner" width="100%" />
 </p>
