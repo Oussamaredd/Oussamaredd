@@ -3,7 +3,7 @@
 </p>
 
 <h2 align="center">
-  Oussama Radouane | Architecte Logiciel
+  Oussama Radouane | Software Architecte
 </h2>
 
 <p align="center">
@@ -14,11 +14,9 @@
 
 ---
 
-## 🙎🏻‍♂️ Profil
+## Profile:
 
-je suis étudiant Mastère 2 Expert en Architecture et Développement Logiciel et Applications. 
-À la recherche d'un stage alterné, rythme : 3 semaines en entreprise / 1 semaine en école.
-
-- 🛠️ Je développe actuellement JoyAtWork : un dashboard d’analyse de la QVT (Qualité de Vie au Travail).
+Currently pursuing a Master’s in Software Architecture and Application Development at INGETIS Paris.
+Looking for an internship.
 
 ---
